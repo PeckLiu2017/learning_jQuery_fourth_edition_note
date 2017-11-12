@@ -10,7 +10,7 @@ $(document).ready(function() {
       $('#switcher button').toggleClass('hidden');
     }
   });
-  
+
   $('#switcher').on('click.collapse', function(event) {
     if (!$(event.target).is('button')) {
       $('#switcher button').toggleClass('hidden');

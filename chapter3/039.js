@@ -1,3 +1,4 @@
+// 使用命名空间防止一下子被解绑所有事件
 $(document).ready(function() {
   var toggleSwitcher = function(event) {
     if (!$(event.target).is('button')) {
@@ -12,6 +13,7 @@ $(document).ready(function() {
     $('#switcher')
       .on('click.collapse', toggleSwitcher);
   });
+  $('#switcher').trigger('click'); // 默认触发点击事件
 });
 
 $(document).ready(function() {
@@ -28,3 +30,4 @@ $(document).ready(function() {
     }
   });
 });
+// 如果在 $(document).ready() 里面无法执行代码，调整一下函数的顺序，或者再写一个 $(document).ready()，把代码放在里面
