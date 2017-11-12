@@ -1,5 +1,10 @@
-// 正常写代码还是写这种形式，比较易懂
 $(document).ready(function() {
+  // 得到事件目标阻止事件冒泡
+  $('#switcher').click(function(e) {
+    if (e.target == this) {
+      $('#switcher button').toggleClass('hidden');
+    }
+  });
   $('#switcher-default').addClass('selected');
   $('#switcher button').on('click',function () {
       $('body').removeClass();
@@ -10,6 +15,6 @@ $(document).ready(function() {
     $('body').addClass('narrow');
   });
   $('#switcher-large').on('click', function() {
-    $('body').addClass('large'); //这里因为是移除所有元素，所以 removeClass() 要放在前面
+    $('body').addClass('large');
   });
 });
