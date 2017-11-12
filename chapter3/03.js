@@ -10,8 +10,8 @@ $(document).ready(function() {
     $('body').removeClass('large');
   });
   $('#switcher-narrow').on('click', function() {
-    $('body').addClass('narrow');
     $('body').removeClass('large');
+    $('body').addClass('narrow');
   });
   $('#switcher-large').on('click', function() {
     $('body').removeClass('narrow');
