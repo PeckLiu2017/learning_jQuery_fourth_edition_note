@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('#letter-a a').click(function(event) {
     event.preventDefault();
-    $('#dictionary').hide().load('a.html',function () {
+    $('#dictionary').hide().load('a.html', function() {
       $(this).fadeIn();
     });
   });
@@ -68,6 +68,20 @@ $(document).ready(function() {
         html += '</div>';
         $('#dictionary').append($(html));
       });
+    });
+  });
+
+  $('#letter-e a').click(function(event) {
+    event.preventDefault();
+    var requestData = {
+      term: $(this).text()
+    };
+    $.get('z.php', requestData, function(data) {
+      $('#dictionary').html(data);
+    }).fail(function(jqXHR) {
+      $('#dictionary')
+        .html('An error occurred: ' + jqXHR.status)
+        .append(jqXHR.responseText);
     });
   });
 
